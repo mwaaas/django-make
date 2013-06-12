@@ -26,7 +26,7 @@ Use
 
   ``` STAGE_ENV_VAR = 'ENV' ```
 
-  and then boot app as,
+  and then boot the app as,
 
     $ ENV=development ./manage.py runserver
 
