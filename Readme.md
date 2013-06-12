@@ -22,11 +22,11 @@ Use
 
     $ STAGE=development ./manage.py runserver
 
-  optionally, define your `settings.STAGE` environment
+  optionally, redefine your `settings.STAGE` setting
 
   ``` STAGE_ENV_VAR = 'ENV' ```
 
-  and then run as,
+  and then boot app as,
 
     $ ENV=development ./manage.py runserver
 
