@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-make',
-    version='0.0.1',
+    version='0.0.2',
     description='Django development environment `$ make` middleware',
     author='Mitchel Kelonye',
     author_email='kelonyemitchel@gmail.com',
