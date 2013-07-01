@@ -19,6 +19,10 @@ class Make(object):
         )
 
         err = ''
+
+        for line in p0.stdout:
+            err += line.rstrip()+ '\n' 
+
         for line in p0.stderr:
             err += line.rstrip()+ '\n' 
 
