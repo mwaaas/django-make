@@ -18,42 +18,18 @@ class Make(object):
             stdout=subprocess.PIPE
         )
 
+        out = ''
         err = ''
 
         for line in p0.stdout:
-            err += line.rstrip()+ '\n' 
+            out += line.rstrip()+ '\n' 
 
         for line in p0.stderr:
             err += line.rstrip()+ '\n' 
 
-        if err == '':
-            p0.wait()
-            return
-
-        # p1 = subprocess.Popen(
-        #     ['find'],
-        #     stdin=p0.stdout,
-        #     stdout=subprocess.PIPE
-        # )
-        # p2 = subprocess.Popen(
-        #     ['grep', '-v', ".py|.pyc"],
-        #     stdin=p1.stdout,
-        #     stdout=subprocess.PIPE
-        # )
-        # p3 = subprocess.Popen(
-        #     ['xargs', 'touch'],
-        #     stdin=p2.stdout,
-        #     stdout=subprocess.PIPE
-        # )
-        # p0.communicate()
-
-        # p1 = subprocess.Popen(
-        #     'find | grep -v ".py" | xargs touch',
-        #     shell=True,
-        #     stdin=p0.stdout,
-        #     stdout=subprocess.PIPE
-        # )
-
         p0.wait()
 
-        return HttpResponse(err, content_type='text/plain')
+        if err.strip() == '':
+            return
+
+        return HttpResponse(out + err, content_type='text/plain')
