@@ -10,6 +10,7 @@ setup(
     author_email='kelonyemitchel@gmail.com',
     url='https://github.com/kelonye/django-make',
     requires=['Django (>=1.3.0)'],
-    packages=find_packages(),
+    packages=['django_make',],
+    package_dir = {'django_make': 'lib'},
     license='MIT License',
     zip_safe=True)
