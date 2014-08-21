@@ -9,7 +9,7 @@ class Make(object):
 
         STAGE_ENV_VAR = getattr(settings, 'STAGE_ENV_VAR', 'STAGE')
         STAGE = os.environ.get(STAGE_ENV_VAR, None)
-        if not STAGE or STAGE != 'development':
+        if STAGE or STAGE != 'development':
             return
         
         p0 = subprocess.Popen(
